@@ -6,13 +6,4 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
 
-@Entity
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
-@Table
-public class Order {
-///get upcoming orders
-// get past orders
-// create order
-}
+

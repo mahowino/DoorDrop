@@ -21,5 +21,6 @@ public class DoorDropApplication {
 				.setCredentials(GoogleCredentials.fromStream(serviceAccount))
 				.build();
 		FirebaseApp.initializeApp(options);
+		SpringApplication.run(DoorDropApplication.class, args);
 	}
 }

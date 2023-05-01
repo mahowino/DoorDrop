@@ -24,4 +24,5 @@ public class Store {
     long storeId;
     String storeName,storeUrl;
     double storeDeliveryCost;
+    long storeCategoryId;
 }
