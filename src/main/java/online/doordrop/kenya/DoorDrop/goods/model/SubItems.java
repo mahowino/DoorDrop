@@ -16,10 +16,17 @@ public class SubItems {
     @Id
     long subItemID;
 
-    long itemId;
+    @ManyToOne
+    Item item;
     String name;
     String description;
 
     double itemPrice;
+
+    public SubItems(String name,String description,double itemPrice){
+        this.name=name;
+        this.description=description;
+        this.itemPrice=itemPrice;
+    }
 
 }

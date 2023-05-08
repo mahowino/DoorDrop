@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 
 @Builder
 @Data
@@ -17,16 +19,11 @@ public class StoreCategory {
 
 
     @Id
-    @SequenceGenerator(
-            name = "good_sequence",
-            sequenceName = "good_sequence",
-            allocationSize = 1
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "good_sequence"
-    )
+
     long storeCategoryId;
     String storeCategoryName;
+
+    @OneToMany( mappedBy = "category")
+    List<Store> stores;
 
 }

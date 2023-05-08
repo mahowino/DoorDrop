@@ -5,6 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import online.doordrop.kenya.DoorDrop.store.models.Store;
+
+import java.util.List;
 
 @Entity
 @Builder
@@ -27,7 +30,14 @@ public class Item {
     long itemId;
     String itemImage, itemName;
 
-    long categoryId,storeId;
+    @OneToOne
+    ItemTypes types;
+
+    @ManyToOne
+    Store store;
+
+    @OneToMany(mappedBy = "item")
+    List<SubItems> subItems;
 
 
 

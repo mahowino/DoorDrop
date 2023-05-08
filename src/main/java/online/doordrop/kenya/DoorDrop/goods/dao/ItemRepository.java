@@ -13,10 +13,10 @@ import java.util.Optional;
 
 public interface ItemRepository extends JpaRepository<Item, Long> {
 
-    @Query("SELECT g FROM Item g  WHERE g.storeId = :storeId")
+    @Query("SELECT g FROM Item g  WHERE g.store.storeId = :storeId")
     Optional<List<Item>> getItemsByStore(@Param("storeId") Long storeId);
 
-    @Query("SELECT g FROM Item g WHERE g.categoryId = :categoryId")
+    @Query("SELECT g FROM Item g WHERE g.types.itemTypesId = :categoryId")
     Optional<List<Item>> getItemsByCategory(@Param("categoryId")long categoryId);
 
     @Query("SELECT g FROM Item g  WHERE g.id = :id")
